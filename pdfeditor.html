@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online PDF editor with multiple tools - merge, split, compress, convert, and edit PDF files. No installation needed. 100% secure and easy to use.">
+    <meta name="keywords" content="PDF editor, merge PDF, split PDF, compress PDF, convert PDF, online PDF tools">
+    <meta name="author" content="PDF Tools Pro">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="PDF Tools Pro - Free Online PDF Editor">
+    <meta property="og:description" content="Edit, merge, split, compress and convert PDF files online for free">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourpdfeditor.com">
+    <meta property="og:image" content="https://www.yourpdfeditor.com/images/og-image.jpg">
+    
+    <title>PDF Tools Pro - Free Online PDF Editor | Merge, Split, Compress PDFs</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.yourpdfeditor.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PDF Tools Pro",
+      "url": "https://www.yourpdfeditor.com",
+      "description": "Free online PDF editor with multiple tools to merge, split, compress, convert, and edit PDF files.",
+      "applicationCategory": "DocumentEditor",
+      "operatingSystem": "Web"
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-color: #f8f9fa;
+            --dark-color: #202124;
+            --gray-color: #5f6368;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--gray-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Tools Section */
+        .tools-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .tool-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .tool-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .tool-card p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        /* PDF Editor Section */
+        .editor-section {
+            padding: 40px 0;
+            background-color: white;
+        }
+        
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .upload-area {
+            width: 100%;
+            max-width: 800px;
+            border: 2px dashed var(--gray-color);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 133, 244, 0.05);
+        }
+        
+        .upload-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .upload-area h3 {
+            margin-bottom: 15px;
+        }
+        
+        .upload-area p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #3367d6;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+        
+        .editor-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        
+        .editor-tool {
+            background-color: var(--light-color);
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .editor-tool:hover {
+            background-color: #e8eaed;
+        }
+        
+        .editor-tool i {
+            margin-right: 8px;
+            color: var(--gray-color);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-card h3 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* Ad Sections */
+        .ad-section {
+            padding: 20px 0;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .ad-container {
+            max-width: 728px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #bdc1c6;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc1c6;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .upload-area {
+                padding: 30px 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="PDF Tools Pro Logo">
+                <h1>PDF Tools Pro</h1>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">All Tools</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn btn-outline">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Your Free Online PDF Editor</h2>
+            <p>Merge, split, compress, convert, rotate, unlock and watermark PDFs with just a few clicks. No installation needed. 100% secure and easy to use.</p>
+            <a href="#editor" class="btn">Edit PDF Now</a>
+        </div>
+    </section>
+    
+    <!-- Ad Section (Top) -->
+    <section class="ad-section">
+        <div class="container ad-container">
+            <!-- Replace with your Google AdSense Ad Unit ID -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+                crossorigin="anonymous"></script>
+            <!-- Responsive Ad Unit -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                data-ad-slot="YOUR_AD_UNIT_ID"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </section>
+    
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>All PDF Tools You Need</h2>
+                <p>Our collection of tools allows you to do everything with PDFs that you could think of.</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-object-group"></i>
+                    </div>
+                    <h3>Merge PDF</h3>
+                    <p>Combine multiple PDF files into one document in seconds.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Split PDF</h3>
+                    <p>Divide a PDF into multiple separate files by pages.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>Compress PDF</h3>
+                    <p>Reduce file size while optimizing for maximum quality.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Convert PDF</h3>
+                    <p>Convert PDFs to Word, Excel, PowerPoint, JPG and more.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Edit PDF</h3>
+                    <p>Add text, images, shapes and annotations to your PDF.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Protect PDF</h3>
+                    <p>Add passwords and permissions to your PDF files.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-unlock"></i>
+                    </div>
+                    <h3>Unlock PDF</h3>
+                    <p>Remove password protection from PDFs (with permission).</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Watermark PDF</h3>
+                    <p>Add text or image watermarks to your documents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PDF Editor Section -->
+    <section class="editor-section" id="editor">
+        <div class="container">
+            <div class="section-title">
+                <h2>Edit PDF Online</h2>
+                <p>Upload your PDF file and start editing right away. No registration required.</p>
+            </div>
+            
+            <div class="editor-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Select PDF File</h3>
+                    <p>Drag and drop PDF here or click to browse files</p>
+                    <button class="btn">Select File</button>
+                </div>
+                
+                <div class="editor-tools">
+                    <div class="editor-tool">
+                        <i class="fas fa-font"></i> Add Text
+                    </div>
+                    <div class="editor-tool">
+                        <i class="fas fa-image"></i> Add Image
+                    </div>
+                    <div class="editor-tool">
+                        <i class="fas fa-highlighter"></i> Highlight
+                    </div>
+                    <div class="editor-tool">
+                        <i class="fas fa-comment"></i> Add Note
+                    </div>
+                    <div class="editor-tool">
+                        <i class="fas fa-pen"></i> Draw
+                    </div>
+                    <div class="editor-tool">
+                        <i class="fas fa-eraser"></i> Erase
+                    </div>
+                    <div class="editor-tool">
+                        <i class="fas fa-shapes"></i> Shapes
+                    </div>
+                    <div class="editor-tool">
+                        <i class="fas fa-signature"></i> Sign
+                    </div>
+                </div>
+                
+                <div class="editor-preview" id="editorPreview" style="display: none;">
+                    <!-- PDF editor preview will be loaded here -->
+                    <canvas id="pdfCanvas"></canvas>
+                </div>
+                
+                <div class="editor-actions" id="editorActions" style="display: none;">
+                    <button class="btn"><i class="fas fa-save"></i> Save PDF</button>
+                    <button class="btn btn-outline"><i class="fas fa-download"></i> Download</button>
+                    <button class="btn btn-outline"><i class="fas fa-redo"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ad Section (Middle) -->
+    <section class="ad-section">
+        <div class="container ad-container">
+            <!-- Replace with your Google AdSense Ad Unit ID -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+                crossorigin="anonymous"></script>
+            <!-- Responsive Ad Unit -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                data-ad-slot="YOUR_AD_UNIT_ID"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our PDF Editor</h2>
+                <p>We provide the best tools to work with your PDF documents online.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-shield-alt"></i> Secure Processing</h3>
+                    <p>All files are processed in the cloud and automatically deleted after 2 hours. Your data is never shared with third parties.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-desktop"></i> No Installation</h3>
+                    <p>Work with PDFs directly in your browser. No need to download or install any software.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Fast Processing</h3>
+                    <p>Our servers are optimized for speed, allowing you to process files in seconds regardless of size.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile Friendly</h3>
+                    <p>Edit PDFs on the go with our responsive design that works perfectly on any device.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-language"></i> Multi-language</h3>
+                    <p>Our interface is available in multiple languages to serve users worldwide.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-headset"></i> Premium Support</h3>
+                    <p>Get dedicated support from our team if you need help with any of our tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>PDF Tools</h3>
+                    <ul>
+                        <li><a href="#">Merge PDF</a></li>
+                        <li><a href="#">Split PDF</a></li>
+                        <li><a href="#">Compress PDF</a></li>
+                        <li><a href="#">PDF to Word</a></li>
+                        <li><a href="#">PDF to Excel</a></li>
+                        <li><a href="#">PDF to JPG</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookies Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    
+                    <h3 style="margin-top: 20px;">Subscribe</h3>
+                    <p>Get the latest updates and news</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 PDF Tools Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // PDF Upload and Editor Functionality (Basic Example)
+        const uploadArea = document.getElementById('uploadArea');
+        const editorPreview = document.getElementById('editorPreview');
+        const editorActions = document.getElementById('editorActions');
+        
+        uploadArea.addEventListener('click', () => {
+            // In a real implementation, this would handle file selection
+            // For this example, we'll just show the editor UI
+            
+            uploadArea.style.display = 'none';
+            editorPreview.style.display = 'block';
+            editorActions.style.display = 'block';
+            
+            // Note: In a real implementation, you would use a PDF library like PDF.js
+            // to render the PDF and implement the editing functionality
+        });
+        
+        // Google Analytics (replace with your tracking ID)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-Y');
+    </script>
+    
+    <!-- PDF.js Library (for actual PDF rendering in a real implementation) -->
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+        // PDF.js would be initialized here for actual PDF rendering
+        // This is just a placeholder for the complete implementation
+    </script>
+    -->
+</body>
+</html>
