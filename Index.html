@@ -3,639 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDFMaster - All-in-One PDF & Image Conversion Tools</title>
-    <meta name="description" content="Free online tools for PDFs and images - convert, compress, edit, merge and more. No installation needed.">
-    
-    <!-- Font Awesome -->
+    <title>PDFMaster - Online PDF & Image Tools</title>
+    <meta name="description" content="Free online tools for PDFs and images - convert, compress, edit, merge">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #f72585;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --success: #4cc9f0;
-            --radius: 8px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #f5f7ff;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-        
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 25px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-        
-        .nav-menu a i {
-            margin-right: 8px;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--dark);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: var(--gray);
-        }
-        
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        /* Tools Section */
-        .tools-section {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .category-tab {
-            padding: 10px 25px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--gray);
-            position: relative;
-            transition: var(--transition);
-            border-radius: var(--radius);
-        }
-        
-        .category-tab.active {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .tool-card {
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid #eee;
-        }
-        
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .tool-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 24px;
-            color: white;
-        }
-        
-        .tool-icon.pdf {
-            background-color: var(--primary);
-        }
-        
-        .tool-icon.image {
-            background-color: var(--accent);
-        }
-        
-        .tool-icon.office {
-            background-color: var(--success);
-        }
-        
-        .tool-card h3 {
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .tool-card p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-        
-        /* Features Section */
-        .features-section {
-            padding: 80px 0;
-            background-color: #f9fafc;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background-color: white;
-            border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .feature-card h3 i {
-            margin-right: 10px;
-            color: var(--primary);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h3 {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 0.9rem;
-        }
-        
-        .footer-col a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 25px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #3a0ca3;
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-menu.active {
-                display: flex;
-            }
-            
-            .nav-menu li {
-                margin: 10px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero {
-                padding: 80px 0;
-            }
-            
-            .tools-section, .features-section, .cta-section {
-                padding: 60px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                margin: 0 auto;
-            }
-            
-            .category-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container header-container">
+        <div class="container">
             <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="PDFMaster Logo">
-                <span class="logo-text">PDFMaster</span>
+                <span>PDFMaster</span>
             </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a></li>
-                <li><a href="image-tools.html"><i class="fas fa-image"></i> Image Tools</a></li>
-                <li><a href="conversions.html"><i class="fas fa-exchange-alt"></i> Conversions</a></li>
-                <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
-            </ul>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a></li>
+                    <li><a href="image-tools.html"><i class="fas fa-image"></i> Image Tools</a></li>
+                    <li><a href="conversions.html"><i class="fas fa-exchange-alt"></i> Conversions</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
         </div>
     </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Powerful PDF & Image Tools</h1>
-            <p>Convert, edit, compress and manage your documents and images with our free online tools. No installation required.</p>
-            
-            <div class="hero-btns">
-                <a href="#tools" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore Tools</a>
-                <a href="how-it-works.html" class="btn btn-outline"><i class="fas fa-play-circle"></i> How It Works</a>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>All-In-One PDF & Image Tools</h1>
+                <p>Convert, compress, edit and manage your files with our free online tools</p>
+                <div class="hero-btns">
+                    <a href="pdf-tools.html" class="btn btn-primary">Try PDF Tools</a>
+                    <a href="image-tools.html" class="btn btn-outline">Try Image Tools</a>
+                </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Tools Section -->
-    <section class="tools-section" id="tools">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Tools</h2>
-                <p>All the document and image processing tools you need in one place</p>
+        </section>
+
+        <section class="tools-section">
+            <div class="container">
+                <h2>Popular Tools</h2>
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">All Tools</button>
+                    <button class="category-tab" data-category="pdf">PDF Tools</button>
+                    <button class="category-tab" data-category="image">Image Tools</button>
+                    <button class="category-tab" data-category="conversion">Conversions</button>
+                </div>
+                <div class="tools-grid">
+                    <!-- PDF Tools -->
+                    <a href="merge-pdf.html" class="tool-card" data-category="pdf">
+                        <div class="tool-icon pdf">
+                            <i class="fas fa-object-group"></i>
+                        </div>
+                        <h3>Merge PDF</h3>
+                        <p>Combine multiple PDF files into one</p>
+                        <span class="btn">Use Tool</span>
+                    </a>
+                    
+                    <a href="split-pdf.html" class="tool-card" data-category="pdf">
+                        <div class="tool-icon pdf">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3>Split PDF</h3>
+                        <p>Divide PDF into multiple files</p>
+                        <span class="btn">Use Tool</span>
+                    </a>
+                    
+                    <!-- Image Tools -->
+                    <a href="compress-image.html" class="tool-card" data-category="image">
+                        <div class="tool-icon image">
+                            <i class="fas fa-file-image"></i>
+                        </div>
+                        <h3>Compress Image</h3>
+                        <p>Reduce image file size</p>
+                        <span class="btn">Use Tool</span>
+                    </a>
+                    
+                    <!-- Conversion Tools -->
+                    <a href="word-to-pdf.html" class="tool-card" data-category="conversion">
+                        <div class="tool-icon office">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h3>Word to PDF</h3>
+                        <p>Convert DOCX to PDF</p>
+                        <span class="btn">Use Tool</span>
+                    </a>
+                    
+                    <a href="pdf-to-word.html" class="tool-card" data-category="conversion">
+                        <div class="tool-icon office">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h3>PDF to Word</h3>
+                        <p>Convert PDF to DOCX</p>
+                        <span class="btn">Use Tool</span>
+                    </a>
+                    
+                    <a href="image-to-pdf.html" class="tool-card" data-category="conversion">
+                        <div class="tool-icon image">
+                            <i class="fas fa-file-image"></i>
+                        </div>
+                        <h3>Image to PDF</h3>
+                        <p>Convert JPG/PNG to PDF</p>
+                        <span class="btn">Use Tool</span>
+                    </a>
+                </div>
             </div>
-            
-            <div class="category-tabs">
-                <button class="category-tab active" data-category="all">All Tools</button>
-                <button class="category-tab" data-category="pdf">PDF Tools</button>
-                <button class="category-tab" data-category="image">Image Tools</button>
-                <button class="category-tab" data-category="conversion">Conversions</button>
-            </div>
-            
-            <div class="tools-grid">
-                <!-- PDF Tools -->
-                <a href="merge-pdf.html" class="tool-card" data-category="pdf">
-                    <div class="tool-icon pdf">
-                        <i class="fas fa-object-group"></i>
-                    </div>
-                    <h3>Merge PDF</h3>
-                    <p>Combine multiple PDF files into one document</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="split-pdf.html" class="tool-card" data-category="pdf">
-                    <div class="tool-icon pdf">
-                        <i class="fas fa-cut"></i>
-                    </div>
-                    <h3>Split PDF</h3>
-                    <p>Divide a PDF into multiple separate files</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="compress-pdf.html" class="tool-card" data-category="pdf">
-                    <div class="tool-icon pdf">
-                        <i class="fas fa-compress-alt"></i>
-                    </div>
-                    <h3>Compress PDF</h3>
-                    <p>Reduce PDF file size while keeping quality</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <!-- Image Tools -->
-                <a href="compress-image.html" class="tool-card" data-category="image">
-                    <div class="tool-icon image">
-                        <i class="fas fa-file-image"></i>
-                    </div>
-                    <h3>Compress Image</h3>
-                    <p>Reduce image file size without losing quality</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="resize-image.html" class="tool-card" data-category="image">
-                    <div class="tool-icon image">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                    <h3>Resize Image</h3>
-                    <p>Change dimensions of your images</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="crop-image.html" class="tool-card" data-category="image">
-                    <div class="tool-icon image">
-                        <i class="fas fa-crop"></i>
-                    </div>
-                    <h3>Crop Image</h3>
-                    <p>Remove unwanted areas from images</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <!-- Conversion Tools -->
-                <a href="word-to-pdf.html" class="tool-card" data-category="conversion">
-                    <div class="tool-icon office">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-                    <h3>Word to PDF</h3>
-                    <p>Convert DOC/DOCX files to PDF format</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="excel-to-pdf.html" class="tool-card" data-category="conversion">
-                    <div class="tool-icon office">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h3>Excel to PDF</h3>
-                    <p>Convert XLS/XLSX files to PDF format</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="pdf-to-word.html" class="tool-card" data-category="conversion">
-                    <div class="tool-icon office">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-                    <h3>PDF to Word</h3>
-                    <p>Convert PDF files to editable Word docs</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="pdf-to-excel.html" class="tool-card" data-category="conversion">
-                    <div class="tool-icon office">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h3>PDF to Excel</h3>
-                    <p>Convert PDF tables to Excel spreadsheets</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="image-to-pdf.html" class="tool-card" data-category="conversion">
-                    <div class="tool-icon image">
-                        <i class="fas fa-file-image"></i>
-                    </div>
-                    <h3>Image to PDF</h3>
-                    <p>Convert JPG/PNG to PDF documents</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-                
-                <a href="pdf-to-image.html" class="tool-card" data-category="conversion">
-                    <div class="tool-icon image">
-                        <i class="fas fa-file-image"></i>
-                    </div>
-                    <h3>PDF to Image</h3>
-                    <p>Convert PDF pages to JPG/PNG images</p>
-                    <div class="btn btn-primary">Use Tool</div>
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-title">
+        </section>
+
+        <section class="features-section">
+            <div class="container">
                 <h2>Why Choose PDFMaster</h2>
-                <p>We make document and image processing simple and accessible</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Processing</h3>
+                        <p>Files are automatically deleted after 2 hours</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fast Conversion</h3>
+                        <p>Process files in seconds</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works on all devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cloud"></i>
+                        <h3>No Installation</h3>
+                        <p>Works directly in your browser</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3><i class="fas fa-shield-alt"></i> Secure Processing</h3>
-                    <p>All files are processed securely in the cloud and automatically deleted after 2 hours.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3><i class="fas fa-bolt"></i> Fast Conversion</h3>
-                    <p>Our tools process files in seconds, regardless of size or complexity.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobile Friendly</h3>
-                    <p>Works perfectly on all devices from smartphones to desktop computers.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3><i class="fas fa-cloud"></i> No Installation</h3>
-                    <p>All tools work directly in your browser with no software to download.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Transform Your Documents?</h2>
-            <p>Join millions of users who trust PDFMaster for their document processing needs.</p>
-            <a href="signup.html" class="btn btn-outline"><i class="fas fa-user-plus"></i> Get Started Free</a>
-        </div>
-    </section>
-    
-    <!-- Footer -->
+        </section>
+    </main>
+
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -645,85 +150,31 @@
                         <li><a href="merge-pdf.html">Merge PDF</a></li>
                         <li><a href="split-pdf.html">Split PDF</a></li>
                         <li><a href="compress-pdf.html">Compress PDF</a></li>
-                        <li><a href="edit-pdf.html">Edit PDF</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col">
                     <h3>Image Tools</h3>
                     <ul>
                         <li><a href="compress-image.html">Compress Image</a></li>
                         <li><a href="resize-image.html">Resize Image</a></li>
                         <li><a href="crop-image.html">Crop Image</a></li>
-                        <li><a href="convert-image.html">Convert Image</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col">
                     <h3>Conversions</h3>
                     <ul>
                         <li><a href="word-to-pdf.html">Word to PDF</a></li>
                         <li><a href="excel-to-pdf.html">Excel to PDF</a></li>
                         <li><a href="pdf-to-word.html">PDF to Word</a></li>
-                        <li><a href="pdf-to-excel.html">PDF to Excel</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="copyright">
                 <p>&copy; 2023 PDFMaster. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Tool Filtering
-        const categoryTabs = document.querySelectorAll('.category-tab');
-        const toolCards = document.querySelectorAll('.tool-card');
-        
-        categoryTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Update active tab
-                categoryTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                const category = tab.getAttribute('data-category');
-                
-                // Filter tools
-                toolCards.forEach(card => {
-                    if (category === 'all') {
-                        card.style.display = 'block';
-                    } else {
-                        if (card.getAttribute('data-category') === category) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
